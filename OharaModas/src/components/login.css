@@ -7,8 +7,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   min-height: 100vh;
+  padding-top: 100px; /* espaço para a navbar fixa */
   display: flex;
-  align-items: center;
   justify-content: center;
   color: #fff;
 }
@@ -19,14 +19,22 @@ body {
   -webkit-backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 40px 50px;
-  width: 380px;
+  width: 390px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   text-align: center;
   transition: transform 0.3s ease;
+  margin-top: 20px; /* margem mais suave, já que o body tem padding-top */
 }
 
 .container:hover {
   transform: translateY(-5px);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 h2 {

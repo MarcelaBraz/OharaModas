@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'; // useEffect adicionado
+// Home.jsx
+import React, { useState, useEffect } from 'react';
 import './home.css';
 
 function Home() {
@@ -40,21 +41,19 @@ function Home() {
         <p>Descubra a moda mais estilosa para você!</p>
       </header>
 
-      {/* Banner com botão de navegação */}
       <section className="banner-container">
-        <button className="banner-button prev" onClick={imagemAnterior}>⟨</button>
+        <button className="banner-button prev" onClick={imagemAnterior} aria-label="Imagem anterior">⟨</button>
         <div
           className="banner"
-          style={{ transform: `translateX(-${indiceAtual * 1000}px)` }}
+          style={{ transform: `translateX(-${indiceAtual * 100}%)` }}
         >
           {imagensBanner.map((src, index) => (
             <img key={index} src={src} alt={`Roupa ${index + 1}`} />
           ))}
         </div>
-        <button className="banner-button next" onClick={proximaImagem}>⟩</button>
+        <button className="banner-button next" onClick={proximaImagem} aria-label="Próxima imagem">⟩</button>
       </section>
 
-      {/* Sobre a loja */}
       <section className="sobre">
         <h2>Bem-vindo à OharaModas</h2>
         <p>
@@ -64,8 +63,6 @@ function Home() {
         </p>
       </section>
 
-      {/* Galeria de produtos com preços */}
-        {/* Galeria de produtos com preços */}
       <section className="produtos">
         <h2>Ofertas Especiais</h2>
         <div className="galeria">
@@ -75,31 +72,31 @@ function Home() {
           </div>
           <div className="produto">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0z7JSph8Xylr31u2IoRN4-sonOX0ErB7e47Jcl8Qcp_c1AwyVuqkEtCnY1Cug8orG3z8&usqp=CAU" alt="Camisa Casual" />
-            <p>Vestido Floral - R$ 89,90</p>
+            <p>Camisa Casual - R$ 89,90</p>
           </div>
           <div className="produto">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDm3xjEXuW8zHZ3cE2pSK9txQfPf9FKQmudY70afu57vBV671qcJFGaWLhWpiwmR2BIqc&usqp=CAU" alt="Calça Jeans" />
-            <p>Vestido Floral - R$ 149,90</p>
+            <p>Calça Jeans - R$ 149,90</p>
           </div>
-           <div className="produto">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlSKqsiErzckqBoWG0OKc1qFIrXXlt6osf9P7ltNbhKKB_UoBwtdYNS3RSAWh7y_NAsmE&usqp=CAU" alt="Camisa Casual" />
-            <p>Vestido Floral - R$ 89,90</p>
+          <div className="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlSKqsiErzckqBoWG0OKc1qFIrXXlt6osf9P7ltNbhKKB_UoBwtdYNS3RSAWh7y_NAsmE&usqp=CAU" alt="Blusa Estilosa" />
+            <p>Blusa Estilosa - R$ 89,90</p>
           </div>
-           <div className="produto">
-            <img src="https://alohacamilly.com.br/wp-content/uploads/2025/04/photo_2025-04-07-12.34.12.jpeg" alt="Camisa Casual" />
-            <p>Camisa Casual - R$ 89,90</p>
+          <div className="produto">
+            <img src="https://alohacamilly.com.br/wp-content/uploads/2025/04/photo_2025-04-07-12.34.12.jpeg" alt="Jaqueta Casual" />
+            <p>Jaqueta Casual - R$ 89,90</p>
           </div>
-           <div className="produto">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlaaMH-WqW4PAZmR0BBLDrhsz8p2wmax39iorMVbR3-XVeaUT2ElEtGv60AEW1RaQvTA&usqp=CAU" alt="Camisa Casual" />
-            <p>Camisa Casual - R$ 89,90</p>
+          <div className="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlaaMH-WqW4PAZmR0BBLDrhsz8p2wmax39iorMVbR3-XVeaUT2ElEtGv60AEW1RaQvTA&usqp=CAU" alt="Camisa Estilosa" />
+            <p>Camisa Estilosa - R$ 89,90</p>
           </div>
           <div className="produto">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYdGQsEEhBwqTap1v5UMlW83kjCsNLCUPHE9tPwtZpLbh81tajDvAGlgzn1yX0IgllSfU&usqp=CAU" alt="Calça Jeans" />
-            <p>Camisa Casual - R$ 149,90</p>
+            <p>Calça Jeans - R$ 149,90</p>
           </div>
           <div className="produto">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrA--0cF-LOPwhTL0ZC34do3mqc0iJAlVhdvqSC20vmigdirt-FZmVKlwOZNtMJ2_iB_s&usqp=CAU" alt="Calça Jeans" />
-            <p>Camisa Casual - R$ 149,90</p>
+            <p>Calça Jeans - R$ 149,90</p>
           </div>
           <div className="produto">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lwHZ9t36ca5irs0fIk48SaXehMhVRibh8xtzxUqpTaKATc8IBgmBQsENNN8wsIuWV1s&usqp=CAU" alt="Calça Jeans" />
@@ -110,17 +107,16 @@ function Home() {
             <p>Calça Jeans - R$ 149,90</p>
           </div>
           <div className="produto">
-            <img src="https://acdn-us.mitiendanube.com/stores/001/066/945/products/e7b71f0af733d6705b207ab305caa43c-ac7900ee79c7d9110317323868673047-480-0.jpg" alt="Calça Jeans" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lwHZ9t36ca5irs0fIk48SaXehMhVRibh8xtzxUqpTaKATc8IBgmBQsENNN8wsIuWV1s&usqp=CAU" alt="Calça Jeans" />
             <p>Calça Jeans - R$ 149,90</p>
           </div>
           <div className="produto">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuSoD76p22LAFPyRZYwOPWVjfwZfkWQLryZl4shY9b8HcYcVu0qQdc0gtFI7jJTn3JhjM&usqp=CAU" alt="Calça Jeans" />
+            <img src="https://img.ltwebstatic.com/images3_spmp/2023/07/18/1689680890dac346e5ba597b433fc822d8162b58d6_thumbnail_720x.jpg" alt="Calça Jeans" />
             <p>Calça Jeans - R$ 149,90</p>
           </div>
         </div>
       </section>
 
-      {/* Rodapé */}
       <footer className="footer">
         <p>© 2025 OharaModas. Todos os direitos reservados.</p>
       </footer>
