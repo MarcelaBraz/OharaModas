@@ -36,10 +36,6 @@ function Home() {
 
   return (
     <div className="home">
-      <header className="header">
-        <h1>OharaModas</h1>
-        <p>Descubra a moda mais estilosa para você!</p>
-      </header>
 
       <section className="banner-container">
         <button className="banner-button prev" onClick={imagemAnterior} aria-label="Imagem anterior">⟨</button>
